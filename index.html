@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Proecsso.RIO - Teste de Fala</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" charset="utf-8"></script>
+	
+</head>
+<body onload="executar()">
+<h2><p>Processo.Rio - TESTE DE FALA</p></h2>
+<div id="introducao">
+	<textarea id="comentario1">
+	Isto é um teste de fala. 
+	Sempre que a página for aberta, este texto será lido de forma automática.
+	</textarea>
+</div>
+
+<div id="secao1">
+	<textarea id="comentario2">
+	Lendo as informações referentes à primeira seção do Processo.Rio. 
+	</textarea>
+</div>
+
+<div id="secao2">
+	<textarea id="comentario3">
+	Lendo as informações referentes à segunda seção do Processo.Rio.
+	</textarea>
+</div>
+
+<div id="secao3">
+	<p><b>Esta é uma seção que somente será lida quando pressionado o botão</b> &nbsp;<input type="button" id="falarComentario4" value="Ouvir"></p><br>
+	<textarea id="comentario4">
+	Botão OUVIR pressionado. 
+	Lendo as informações referentes à terceira seção do Processo.Rio.
+	</textarea>
+</div>
+
+<div>
+	<input type="text" id="texto" value="ATENÇÃO COM O EMPREGO DA VÍRGULA. 'Enquanto o padre pasta a vaca reza'.">
+	<input type="button" id="falar" value="Ouvir">
+</div>
+<script src="lerTexto.js"></script>
+</body>
+</html>
