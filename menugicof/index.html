@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="j_idt2">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="theme-color" content="gicof" /><link type="text/css" rel="stylesheet" href="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/theme.css.xhtml?ln=primefaces-ultima-gicof" /><script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/jquery/jquery.js.xhtml?ln=primefaces&amp;v=8.0"></script><script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/jquery/jquery-plugins.js.xhtml?ln=primefaces&amp;v=8.0"></script><script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/core.js.xhtml?ln=primefaces&amp;v=8.0"></script><script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/components.js.xhtml?ln=primefaces&amp;v=8.0"></script><link type="text/css" rel="stylesheet" href="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/components.css.xhtml?ln=primefaces&amp;v=8.0" /><script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/touch/touchswipe.js.xhtml?ln=primefaces&amp;v=8.0"></script><link type="text/css" rel="stylesheet" href="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/css/nanoscroller.css.xhtml?ln=ultima-layout" /><link type="text/css" rel="stylesheet" href="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/css/animate.css.xhtml?ln=ultima-layout" /><link type="text/css" rel="stylesheet" href="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/css/ripple.css.xhtml?ln=ultima-layout" /><link type="text/css" rel="stylesheet" href="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/css/layout-gicof.css.xhtml?ln=ultima-layout" /><link type="text/css" rel="stylesheet" href="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/override.css.xhtml?ln=css" /><script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='pt_BR';}</script>																				
+	<title>GICOF - Gestão Integrada dos Processos de Controle, Contabilidade, Gestão de Contratos Externos, Orçamento e Financeiro</title><script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/js/nanoscroller.js.xhtml?ln=ultima-layout"></script><script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/js/layout.js.xhtml?ln=ultima-layout"></script><script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/js/ripple.js.xhtml?ln=ultima-layout"></script><script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/js/swipe.js.xhtml?ln=ultima-layout"></script>
+
+	<script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/fileupload/fileupload.js.xhtml?ln=primefaces&amp;v=8.0"></script>
+	<link type="text/css" rel="stylesheet" href="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/fileupload/fileupload.css.xhtml?ln=primefaces&amp;v=8.0" />
+
+	<script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/inputnumber/inputnumber.js.xhtml?ln=primefaces&amp;v=8.0"></script>
+	<link type="text/css" rel="stylesheet" href="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/inputnumber/inputnumber.css.xhtml?ln=primefaces&amp;v=8.0" />
+
+	<script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/texteditor/texteditor.js.xhtml?ln=primefaces&amp;v=8.0"></script>
+	<link type="text/css" rel="stylesheet" href="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/texteditor/texteditor.css.xhtml?ln=primefaces&amp;v=8.0" />
+
+	<script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/keyfilter/keyfilter.js.xhtml?ln=primefaces&amp;v=8.0"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/img/favicon.ico.xhtml" /><script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/locale-primefaces.js.xhtml?ln=js"></script><script type="text/javascript" src="https://gicofhom.rio.gov.br/portal-ui-web/javax.faces.resource/backButton.js.xhtml?ln=js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+
+
+	<script type="text/javascript">
+	  $(document).ready(function() {
+		window.addEventListener('storage', function(e) {  
+					
+			  if(parseInt(e.storageArea.numTabs) == 0){		
+				   $('#frame', window.parent.document).width('320px');
+			  }else{
+				  var tabAdjust = parseInt(e.storageArea.numTabs) + 1;
+				  var size = tabAdjust*20 + '%';
+				  $('#frame', window.parent.document).width(size);
+			  }
+			  if(e.storageArea.expanded == 'show'){
+					$('#frame', window.parent.document).height('366px');		
+			  }else{
+					$('#frame', window.parent.document).height('66px');		
+			  }		
+		});
+	 });
+	</script>
+	
+	<script type="text/javascript">
+	function verifyChat(){
+		var url = "https://gicofhom.rio.gov.br/chat?empid=1&usrid=1";
+
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("GET", url, true);
+		
+		xhttp.onreadystatechange = function(){
+			if (xhttp.status == 200 ) {
+				$('#frame').show();
+			} else{
+				console.log("erro ao carregar chat")
+				$('#frame').hide();
+			}
+		}
+		xhttp.send();
+	}
+	</script></head><body class="main-body layout-compact ">
+
+	<div class="layout-wrapper menu-layout-static ">
+
+	<div class="topbar clearfix">
+<form id="j_idt17" name="j_idt17" method="post" action="https://gicofhom.rio.gov.br/portal-ui-web/index.xhtml" enctype="application/x-www-form-urlencoded" onkeypress="if (event.keyCode == 13) { return false; }">
+<input type="hidden" name="j_idt17" value="j_idt17" />
+<input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="-3941435406637745635:3473479864247987102" autocomplete="off" />
+
+			<div class="topbar-left">
+				<div class="logo"></div>
+			</div>
+
+			<div class="topbar-right">
+				<a id="menu-button" href="#"> <i></i>
+				</a> <a id="topbar-menu-button" href="#"> <i class="material-icons"></i>
+				</a>
+
+				<ul class="topbar-items fadeInDown animated">
+
+					<li class="profile-item"><a href="#"> <label>Prefeitura da Cidade do Rio de Janeiro
+								</label>
+					</a>
+						<ul class="ultima-menu animated">
+
+							<li role="menuitem"><a id="j_idt17:j_idt19" href="#" class="ui-commandlink ui-widget" onclick="$.removeCookie('ultima_expandeditems', {path: '/'}); $.removeCookie('ultima_inlineprofile_expanded', {path: '/'});;PrimeFaces.ab({s:&quot;j_idt17:j_idt19&quot;,f:&quot;j_idt17&quot;});return false;">
+									<span>Menu Vertical</span>
+									<i class="material-icons"></i></a></li>
+
+							<li role="menuitem"><a id="j_idt17:j_idt22" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt17:j_idt22&quot;,f:&quot;j_idt17&quot;});return false;">
+									<span>Menu Horizontal</span>
+									<i class="material-icons"></i></a></li>
+
+							<li role="menuitem"><a id="j_idt17:j_idt25" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt17:j_idt25&quot;,f:&quot;j_idt17&quot;});return false;">
+									<span>Sair</span>
+									<i class="material-icons"></i></a></li>
+						</ul></li>
+
+					<li class="exit-item"><a id="j_idt17:IdExit" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt17:IdExit&quot;,f:&quot;j_idt17&quot;});return false;">
+							<i class="topbar-icon material-icons">power_settings_new</i></a><div id="j_idt17:j_idt29" class="ui-tooltip ui-widget ui-tooltip-right" role="tooltip"><div class="ui-tooltip-arrow"></div><div class="ui-tooltip-text ui-shadow ui-corner-all">Sair</div></div><script id="j_idt17:j_idt29_s" type="text/javascript">$(function(){PrimeFaces.cw("Tooltip","widget_j_idt17_j_idt29",{id:"j_idt17:j_idt29",showEffect:"fade",hideEffect:"fade",target:"j_idt17:IdExit"});});</script></li>
+
+					<li class="inbox-item"><a id="j_idt17:IdInbox" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt17:IdInbox&quot;,f:&quot;j_idt17&quot;});return false;">
+							<i class="topbar-icon material-icons"></i>
+							<span class="topbar-badge">5</span></a><div id="j_idt17:j_idt32" class="ui-tooltip ui-widget ui-tooltip-right" role="tooltip"><div class="ui-tooltip-arrow"></div><div class="ui-tooltip-text ui-shadow ui-corner-all">Caixa de entrada</div></div><script id="j_idt17:j_idt32_s" type="text/javascript">$(function(){PrimeFaces.cw("Tooltip","widget_j_idt17_j_idt32",{id:"j_idt17:j_idt32",showEffect:"fade",hideEffect:"fade",target:"j_idt17:IdInbox"});});</script></li>
+
+					<li role="menuitem"><a id="j_idt17:idMessager" href="#" class="ui-commandlink ui-widget" onclick="PrimeFaces.ab({s:&quot;j_idt17:idMessager&quot;,f:&quot;j_idt17&quot;});return false;">
+							<i class="topbar-icon material-icons"></i>
+							<span class="topbar-badge">5</span></a><div id="j_idt17:j_idt35" class="ui-tooltip ui-widget ui-tooltip-right" role="tooltip"><div class="ui-tooltip-arrow"></div><div class="ui-tooltip-text ui-shadow ui-corner-all">Mensagens</div></div><script id="j_idt17:j_idt35_s" type="text/javascript">$(function(){PrimeFaces.cw("Tooltip","widget_j_idt17_j_idt35",{id:"j_idt17:j_idt35",showEffect:"fade",hideEffect:"fade",target:"j_idt17:idMessager"});});</script></li>
+
+					<li class="unidade-item"><div id="j_idt17:toolTipUg" class="ui-tooltip ui-widget ui-tooltip-right" role="tooltip"><div class="ui-tooltip-arrow"></div><div class="ui-tooltip-text ui-shadow ui-corner-all">PCRJ
+							<br />Prefeitura Da Cidade Do Rio Do Janeiro
+							<br />CNPJ: </div></div><script id="j_idt17:toolTipUg_s" type="text/javascript">$(function(){PrimeFaces.cw("Tooltip","widget_j_idt17_toolTipUg",{id:"j_idt17:toolTipUg",showEffect:"clip",hideEffect:"clip",target:"j_idt17:btnUniGestao"});});</script><a id="j_idt17:btnUniGestao" href="#" class="ui-commandlink ui-widget secondary" onclick="PF('dlgAlteraUnidadeGestao').show();;PrimeFaces.ab({s:&quot;j_idt17:btnUniGestao&quot;,f:&quot;j_idt17&quot;});return false;" style="text-decoration:none;white;width:50px">PCRJ</a></li>
+				</ul>
+			</div>
+</form>
+	</div><div id="j_idt52" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="j_idt52_title" class="ui-dialog-title">Unidade de Gestão</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Close"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="j_idt52_content">
+<form id="j_idt53" name="j_idt53" method="post" action="https://gicofhom.rio.gov.br/portal-ui-web/index.xhtml" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_idt53" value="j_idt53" />
+<input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:1" value="-3941435406637745635:3473479864247987102" autocomplete="off" />
+<table id="j_idt53:j_idt54" class="ui-panelgrid ui-widget ui-panelgrid-blank form-group" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><div id="j_idt53:j_idt55" class="ui-datatable ui-widget ui-datatable-scrollable"><div class="ui-widget-header ui-datatable-scrollable-header"><div class="ui-datatable-scrollable-header-box"><table role="grid"><thead id="j_idt53:j_idt55_head"><tr role="row"><th id="j_idt53:j_idt55:j_idt56" class="ui-state-default" role="columnheader" aria-label="Sigla" scope="col" style="width:50px"><span class="ui-column-title">Sigla</span></th><th id="j_idt53:j_idt55:j_idt58" class="ui-state-default" role="columnheader" aria-label="Un. de Gestão" scope="col"><span class="ui-column-title">Un. de Gestão</span></th><th id="j_idt53:j_idt55:j_idt60" class="ui-state-default" role="columnheader" aria-label="CNPJ" scope="col"><span class="ui-column-title">CNPJ</span></th><th id="j_idt53:j_idt55:j_idt62" class="ui-state-default" role="columnheader" aria-label="Padrão" scope="col" style="width:50px"><span class="ui-column-title">Padrão</span></th></tr></thead></table></div></div><div class="ui-datatable-scrollable-body" tabindex="-1" style="max-height:200px"><table role="grid"><tbody id="j_idt53:j_idt55_data" class="ui-datatable-data ui-widget-content" tabindex="0"><tr data-ri="0" data-rk="1" class="ui-widget-content ui-datatable-even ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">PCRJ</td><td role="gridcell">Prefeitura da Cidade do Rio do Janeiro</td><td role="gridcell"></td><td role="gridcell">Sim</td></tr><tr data-ri="1" data-rk="21" class="ui-widget-content ui-datatable-odd ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">RioAguas</td><td role="gridcell">Empresa RioAguas</td><td role="gridcell">02.712.055/0001-50</td><td role="gridcell">Não</td></tr><tr data-ri="2" data-rk="22" class="ui-widget-content ui-datatable-even ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">PREVRIO</td><td role="gridcell">PREVRIO</td><td role="gridcell">84.333.445/0001-83</td><td role="gridcell">Não</td></tr><tr data-ri="3" data-rk="23" class="ui-widget-content ui-datatable-odd ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">FRZO</td><td role="gridcell">RIO ZOO</td><td role="gridcell">42.498.733/0001-48</td><td role="gridcell">Não</td></tr><tr data-ri="4" data-rk="24" class="ui-widget-content ui-datatable-even ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">SMS</td><td role="gridcell">Saúde</td><td role="gridcell">42.498.733/0001-48</td><td role="gridcell">Não</td></tr><tr data-ri="5" data-rk="41" class="ui-widget-content ui-datatable-odd ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">SMO</td><td role="gridcell">SECRETARIA MUNICIPAL DE OBRAS</td><td role="gridcell">42.498.733/0001-48</td><td role="gridcell">Não</td></tr><tr data-ri="6" data-rk="422" class="ui-widget-content ui-datatable-even ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell"></td><td role="gridcell"></td><td role="gridcell">42.498.733/0001-48</td><td role="gridcell">Não</td></tr><tr data-ri="7" data-rk="81" class="ui-widget-content ui-datatable-odd ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">SMF</td><td role="gridcell">Secretaria Municipal de Fazenda</td><td role="gridcell">42.498.733/0001-48</td><td role="gridcell">Não</td></tr><tr data-ri="8" data-rk="126" class="ui-widget-content ui-datatable-even ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">GSMF</td><td role="gridcell">GABINETE DA SECRETARIA MUNICIPAL DE FAZENDA</td><td role="gridcell">42.498.733/0001-48</td><td role="gridcell">Não</td></tr><tr data-ri="9" data-rk="182" class="ui-widget-content ui-datatable-odd ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">1CRE_109</td><td role="gridcell">PRIMEIRA COORDENADORIA REGIONAL DE EDUCACAO_109</td><td role="gridcell">42.498.733/0001-48</td><td role="gridcell">Não</td></tr><tr data-ri="10" data-rk="263" class="ui-widget-content ui-datatable-even ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">TST_UO</td><td role="gridcell">Teste</td><td role="gridcell">42.498.733/0001-48</td><td role="gridcell">Não</td></tr><tr data-ri="11" data-rk="362" class="ui-widget-content ui-datatable-odd ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell"></td><td role="gridcell"></td><td role="gridcell">42.498.733/0001-48</td><td role="gridcell">Não</td></tr><tr data-ri="12" data-rk="421" class="ui-widget-content ui-datatable-even ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">TTT</td><td role="gridcell"></td><td role="gridcell">42.498.733/0001-48</td><td role="gridcell">Não</td></tr><tr data-ri="13" data-rk="48" class="ui-widget-content ui-datatable-odd ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">Iplan-Und</td><td role="gridcell">IplanRio - Unidade</td><td role="gridcell"></td><td role="gridcell">Não</td></tr></tbody></table></div><div class="ui-widget-header ui-datatable-scrollable-footer"><div class="ui-datatable-scrollable-footer-box"><table role="grid"></table></div></div><input type="hidden" id="j_idt53:j_idt55_selection" name="j_idt53:j_idt55_selection" autocomplete="off" value="" /><input type="hidden" id="j_idt53:j_idt55_scrollState" name="j_idt53:j_idt55_scrollState" autocomplete="off" value="0,0" /></div><script id="j_idt53:j_idt55_s" type="text/javascript">$(function(){PrimeFaces.cw("DataTable","widget_j_idt53_j_idt55",{id:"j_idt53:j_idt55",selectionMode:"single",scrollable:true,liveScroll:false,scrollStep:0,scrollLimit:14,scrollHeight:"200",liveScrollBuffer:0,virtualScroll:false,groupColumnIndexes:[],disableContextMenuIfEmpty:false});});</script></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><button id="j_idt53:j_idt64" name="j_idt53:j_idt64" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="PrimeFaces.bcn(this,event,[function(event){PF('dlgAlteraUnidadeGestao'.hide();},function(event){PrimeFaces.ab({s:&quot;j_idt53:j_idt64&quot;,f:&quot;j_idt53&quot;});return false;}]);" type="submit"><span class="ui-button-text ui-c">Confirmar Seleção</span></button><script id="j_idt53:j_idt64_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_j_idt53_j_idt64",{id:"j_idt53:j_idt64"});});</script></td></tr></tbody></table>
+</form></div></div><script id="j_idt52_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","dlgAlteraUnidadeGestao",{id:"j_idt52",modal:true,width:"600px",height:"350px"});});</script>
+<form id="menuform" name="menuform" method="post" action="https://gicofhom.rio.gov.br/portal-ui-web/index.xhtml" enctype="application/x-www-form-urlencoded" onkeypress="if (event.keyCode == 13) { return false; }">
+<input type="hidden" name="menuform" value="menuform" />
+<input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:2" value="-3941435406637745635:3473479864247987102" autocomplete="off" />
+
+		<div class="layout-menu layout-menu-dark">
+			<div class="nano">
+				<div class="nano-content menu-scroll-content">
+						<div class="search-input"><span class="md-inputfield"><input id="menuform:txtPesquisa" name="menuform:txtPesquisa" type="text" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" autocomplete="off" onkeydown="PrimeFaces.ab({s:&quot;menuform:txtPesquisa&quot;,e:&quot;keydown&quot;,f:&quot;menuform&quot;,p:&quot;menuform:txtPesquisa menuform:txtPesquisa&quot;,g:false});" onkeyup="PrimeFaces.ab({s:&quot;menuform:txtPesquisa&quot;,e:&quot;keyup&quot;,f:&quot;menuform&quot;,p:&quot;menuform:txtPesquisa menuform:txtPesquisa&quot;,g:false});" /><script id="menuform:txtPesquisa_s" type="text/javascript">$(function(){PrimeFaces.cw("InputText","widget_menuform_txtPesquisa",{id:"menuform:txtPesquisa",maxlength:-2147483648});});</script>
+								<label>Pesquisar</label>
+
+								<i class="topbar-icon material-icons"></i></span>
+						</div>
+						<ul id="menuform:idSideMenu" class="ultima-menu clearfix">
+							<li id="menuform:idSideMenu_0" role="menuitem" class="">
+								<a href="#" class="ripplelink">
+									<i class="material-icons"></i>
+									<span>Cadastro único</span>
+									<span class="ink animate"></span>
+									<i class="material-icons">&#xE313;</i>
+								</a>
+								<div class="layout-menu-tooltip">
+									<div class="layout-menu-tooltip-arrow"></div>
+									<div class="layout-menu-tooltip-text">Cadastro único</div>
+								</div>
+								<ul role="menu">
+									<li id="menuform:idSideMenu_0_0" role="menuitem" class="">
+										<a href="#" class="ripplelink">
+											<span>Tabelas</span>
+											<span class="ink animate"></span>
+											<i class="material-icons">&#xE313;</i>
+										</a>
+										<ul role="menu">
+											<li id="menuform:idSideMenu_0_0_0" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/cad\/views\/tabberCadFundamentacaoLegal.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;0_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Legislação</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_0_0_1" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/cad\/views\/orgaoOficialPublicacaoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;0_0_1&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Órgão Oficial de Publicação</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_0_0_2" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/cad\/views\/tabberCadTipoDocumento.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;0_0_2&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Tipo de legislação</span>
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li id="menuform:idSideMenu_1" role="menuitem" class="">
+								<a href="#" class="ripplelink">
+									<i class="material-icons"></i>
+									<span>Contabilidade</span>
+									<span class="ink animate"></span>
+									<i class="material-icons">&#xE313;</i>
+								</a>
+								<div class="layout-menu-tooltip">
+									<div class="layout-menu-tooltip-arrow"></div>
+									<div class="layout-menu-tooltip-text">Contabilidade</div>
+								</div>
+								<ul role="menu">
+									<li id="menuform:idSideMenu_1_0" role="menuitem" class="">
+										<a href="#" class="ripplelink">
+											<span>Configuração de contabilização</span>
+											<span class="ink animate"></span>
+											<i class="material-icons">&#xE313;</i>
+										</a>
+										<ul role="menu">
+											<li id="menuform:idSideMenu_1_0_0" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbAuditConfContabilizacao.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Auditoria configuração contabilização</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_0_1" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbConjuntoLancPadronizado.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_0_1&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Conjunto de lançamentos padronizados</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_0_2" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbConsultaConfigContabil.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_0_2&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Consulta configuração contabilização</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_0_3" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbEventoContabel.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_0_3&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Evento contábil</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_0_4" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbFatoContabil.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_0_4&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Fato contábil</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_0_5" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbGeradorEventoContabil.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_0_5&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Gerador evento contábil</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_0_6" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbLancamentoContabilPadrao.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_0_6&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Lançamento contábil padrão</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_0_7" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbTransacaoContabil.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_0_7&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Transação contábil</span>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li id="menuform:idSideMenu_1_1" role="menuitem" class="">
+										<a href="#" class="ripplelink">
+											<span>Importações</span>
+											<span class="ink animate"></span>
+											<i class="material-icons">&#xE313;</i>
+										</a>
+										<ul role="menu">
+											<li id="menuform:idSideMenu_1_1_0" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbImportacaoPCASP.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_1_0&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Importação PCASP</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_1_1" role="menuitem" class="">
+												<a href="#" class="ripplelink">
+													<span>Importação matriz de saldos contábeis</span>
+													<span class="ink animate"></span>
+													<i class="material-icons">&#xE313;</i>
+												</a>
+												<ul role="menu">
+													<li id="menuform:idSideMenu_1_1_1_0" role="menuitem">
+														<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbArquivoInfComplMscLog.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_1_1_0&quot;}],f:&quot;menuform&quot;});return false;">
+															<span>Informações Complementares</span>
+														</a>
+													</li>
+													<li id="menuform:idSideMenu_1_1_1_1" role="menuitem">
+														<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbArquivoContaIcMscLog.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_1_1_1&quot;}],f:&quot;menuform&quot;});return false;">
+															<span>Vinculação IC x Contas Contábeis</span>
+														</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li id="menuform:idSideMenu_1_2" role="menuitem" class="">
+										<a href="#" class="ripplelink">
+											<span>Relatórios</span>
+											<span class="ink animate"></span>
+											<i class="material-icons">&#xE313;</i>
+										</a>
+										<ul role="menu">
+											<li id="menuform:idSideMenu_1_2_0" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbRelatorioComplementoContabel.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_2_0&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Relatório complementos contábeis</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_2_1" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbRelatoriConfiguracaoContabel.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_2_1&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Relatório configuração contabilização</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_2_2" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbRelatorioPlanoContas.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_2_2&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Relatório plano de contas</span>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li id="menuform:idSideMenu_1_3" role="menuitem" class="">
+										<a href="#" class="ripplelink">
+											<span>Tabelas</span><span class="ink animate"></span>
+											<i class="material-icons">&#xE313;</i>
+										</a>
+										<ul role="menu">
+											<li id="menuform:idSideMenu_1_3_0" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbComplementoContabil.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_3_0&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Complementos contábeis</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_3_1" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/ctbComplContabilGenericoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_3_1&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Complementos contábeis genéricos</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_3_2" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbContaContabil.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_3_2&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Contas Contábeis</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_3_3" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbParametroExercicio.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_3_3&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Exercícios Contábeis</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_3_4" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbGrupoContaContabil.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_3_4&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Grupo contas contábeis</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_3_5" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbHistoricoPadrao.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_3_5&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Histórico padrão</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_1_3_6" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/ctb\/views\/tabberCtbPeriodoContabil.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;1_3_6&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Períodos Contábeis</span>
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li id="menuform:idSideMenu_2" role="menuitem" class="">
+								<a href="#" class="ripplelink">
+									<i class="material-icons"></i>
+									<span>Execução orçamentária</span>
+									<span class="ink animate"></span>
+									<i class="material-icons">&#xE313;</i>
+								</a>
+								<div class="layout-menu-tooltip">
+									<div class="layout-menu-tooltip-arrow"></div>
+									<div class="layout-menu-tooltip-text">Execução orçamentária</div>
+								</div>
+								<ul role="menu">
+									<li id="menuform:idSideMenu_2_0" role="menuitem" class="">
+										<a href="#" class="ripplelink">
+											<span>Processos</span><span class="ink animate"></span>
+											<i class="material-icons">&#xE313;</i>
+										</a>
+										<ul role="menu">
+											<li id="menuform:idSideMenu_2_0_0" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/exe\/views\/tabberExeControleDataOrcamentaria.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;2_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Controle Data Orçamentária</span>
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li id="menuform:idSideMenu_3" role="menuitem" class="">
+								<a href="#" class="ripplelink">
+									<i class="material-icons"> </i>
+									<span>Ferramenta administrativa</span>
+									<span class="ink animate"></span>
+									<i class="material-icons">&#xE313;</i>
+								</a>
+								<div class="layout-menu-tooltip">
+									<div class="layout-menu-tooltip-arrow"></div>
+									<div class="layout-menu-tooltip-text">Ferramenta administrativa</div>
+								</div>
+								<ul role="menu">
+									<li id="menuform:idSideMenu_3_0" role="menuitem">
+										<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/admin\/views\/tabberUsuario.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;3_0&quot;}],f:&quot;menuform&quot;});return false;">
+											<span>Cadastro de Usuários</span>
+										</a>
+									</li>
+									<li id="menuform:idSideMenu_3_1" role="menuitem">
+										<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/admin\/views\/tabberParametro.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;3_1&quot;}],f:&quot;menuform&quot;});return false;">
+											<span>Cadastro de parâmetros</span>
+										</a>
+									</li>
+									<li id="menuform:idSideMenu_3_2" role="menuitem">
+										<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/admin\/views\/tabberUnidadeGestaoPeriodo.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;3_2&quot;}],f:&quot;menuform&quot;});return false;">
+											<span>Classificação organizacional</span>
+										</a>
+									</li>
+									<li id="menuform:idSideMenu_3_3" role="menuitem" class="">
+										<a href="#" class="ripplelink">
+											<span>Configurações</span>
+											<span class="ink animate"></span>
+											<i class="material-icons">&#xE313;</i>
+										</a>
+										<ul role="menu">
+											<li id="menuform:idSideMenu_3_3_0" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/admin\/views\/tabberEmailConfig.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;3_3_0&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Email</span>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li id="menuform:idSideMenu_3_4" role="menuitem">
+										<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/admin\/views\/tabberPerfil.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;3_4&quot;}],f:&quot;menuform&quot;});return false;">
+											<span>Perfis e Permissões</span>
+										</a>
+									</li>
+									<li id="menuform:idSideMenu_3_5" role="menuitem">
+										<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/admin\/views\/tabberPontoAcesso.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;3_5&quot;}],f:&quot;menuform&quot;});return false;">
+											<span>Pontos de Acesso</span>
+										</a>
+									</li>
+									<li id="menuform:idSideMenu_3_6" role="menuitem">
+										<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/admin\/views\/tabberServidorAutenticacao.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;3_6&quot;}],f:&quot;menuform&quot;});return false;">
+											<span>Servidor de autenticação</span>
+										</a>
+									</li>
+									<li id="menuform:idSideMenu_3_7" role="menuitem">
+										<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/admin\/views\/tabberAdmEstruturaOrganizacional.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;3_7&quot;}],f:&quot;menuform&quot;});return false;">
+											<span>Tipo Classificação Organizacional</span>
+										</a>
+									</li>
+									<li id="menuform:idSideMenu_3_8" role="menuitem">
+										<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/admin\/views\/tabberTurno.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;3_8&quot;}],f:&quot;menuform&quot;});return false;">
+											<span>Turnos de acesso</span>
+										</a>
+									</li>
+									<li id="menuform:idSideMenu_3_9" role="menuitem">
+										<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/admin\/views\/tabberUnidadeGestao.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;3_9&quot;}],f:&quot;menuform&quot;});return false;">
+											<span>Unidades de Gestão</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li id="menuform:idSideMenu_4" role="menuitem" class="">
+								<a href="#" class="ripplelink">
+									<i class="material-icons"></i>
+									<span>Financeiro</span>
+									<span class="ink animate"></span>
+									<i class="material-icons">&#xE313;</i>
+								</a>
+								<div class="layout-menu-tooltip">
+									<div class="layout-menu-tooltip-arrow"></div>
+									<div class="layout-menu-tooltip-text">Financeiro</div>
+								</div>
+								<ul role="menu">
+									<li id="menuform:idSideMenu_4_0" role="menuitem">
+										<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/financeiro\/views\/tabberBanco.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;4_0&quot;}],f:&quot;menuform&quot;});return false;">
+											<span>Banco/Agência</span>
+										</a>
+									</li>
+									<li id="menuform:idSideMenu_4_1" role="menuitem" class="">
+										<a href="#" class="ripplelink">
+											<span>Indicador financeiro</span>
+											<span class="ink animate"></span>
+											<i class="material-icons">&#xE313;</i>
+										</a>
+										<ul role="menu">
+											<li id="menuform:idSideMenu_4_1_0" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/financeiro\/views\/indicadorTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;4_1_0&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Indicadores Financeiros</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_4_1_1" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/financeiro\/views\/tabberFinParametroIndicador.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;4_1_1&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Parametrização Indicador</span>
+												</a>
+											</li>
+											<li id="menuform:idSideMenu_4_1_2" role="menuitem">
+												<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/financeiro\/views\/tabberFinValorHistorico.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;4_1_2&quot;}],f:&quot;menuform&quot;});return false;">
+													<span>Valor Histórico</span>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li id="menuform:idSideMenu_4_2" role="menuitem">
+										<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/financeiro\/views\/tabberFinTipoBancoPagador.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;4_2&quot;}],f:&quot;menuform&quot;});return false;">
+											<span>Tipo de Banco Pagador</span>
+										</a>
+									</li>
+									<li id="menuform:idSideMenu_4_3" role="menuitem">
+										<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/financeiro\/views\/tabberFinTipoMovimentoFinanceiro.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;4_3&quot;}],f:&quot;menuform&quot;});return false;">
+											<span>Tipo de movimento financeiro</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li id="menuform:idSideMenu_5" role="menuitem" class="">
+								<a href="#" class="ripplelink">
+									<i class="material-icons"></i>
+									<span>Gestão administrativa</span>
+									<span class="ink animate"></span>
+									<i class="material-icons">&#xE313;</i>
+								</a>
+								<div class="layout-menu-tooltip">
+									<div class="layout-menu-tooltip-arrow"></div>
+									<div class="layout-menu-tooltip-text">Gestão administrativa</div>
+								</div>
+								<ul role="menu"><li id="menuform:idSideMenu_5_0" role="menuitem" class="">
+									<a href="#" class="ripplelink">
+										<span>Suprimentos e Logística</span>
+										<span class="ink animate"></span>
+										<i class="material-icons">&#xE313;</i>
+									</a>
+									<ul role="menu">
+										<li id="menuform:idSideMenu_5_0_7" role="menuitem" class="">
+											<a href="#" class="ripplelink">
+												<span>Materiais</span>
+												<span class="ink animate"></span>
+												<i class="material-icons">&#xE313;</i>
+											</a>
+											<ul role="menu">
+												<li id="menuform:idSideMenu_5_0_7_0" role="menuitem">
+													<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadAreaEspecifica.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+														<span>Estrutura de Material</span>
+													</a>
+												</li>
+												<li id="menuform:idSideMenu_5_0_7_1" role="menuitem">
+													<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadEvento.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_3&quot;}],f:&quot;menuform&quot;});return false;">
+														<span>Atributos Tecnológicos de Materiais</span>
+													</a>
+												</li>
+												<li id="menuform:idSideMenu_5_0_7_2" role="menuitem">
+													<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadGrupoMaterial.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_2&quot;}],f:&quot;menuform&quot;});return false;">
+														<span>Tipo de Grandeza</span>
+													</a>
+												</li>
+												<li id="menuform:idSideMenu_5_0_7_3" role="menuitem">
+													<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadTipoLicitacao.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_14&quot;}],f:&quot;menuform&quot;});return false;">
+														<span>Referência do Item</span>
+													</a>
+												</li>
+												<li id="menuform:idSideMenu_5_0_7_4" role="menuitem">
+													<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadTipoGrandeza.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_13&quot;}],f:&quot;menuform&quot;});return false;">
+														<span>Tipo de Medicamento</span>
+													</a>
+												</li>
+												<li id="menuform:idSideMenu_5_0_7_5" role="menuitem">
+													<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadTipoSolicitacaoDespesa.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_16&quot;}],f:&quot;menuform&quot;});return false;">
+														<span>Áreas Específicas</span>
+													</a>
+												</li>
+												<li id="menuform:idSideMenu_5_0_7_6" role="menuitem" class="">
+													<a href="#" class="ripplelink">
+														<span>Importações</span>
+														<span class="ink animate"></span>
+														<i class="material-icons">&#xE313;</i>
+													</a>
+													<ul role="menu">
+														<li id="menuform:idSideMenu_5_0_7_6_0" role="menuitem">
+															<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadAreaEspecifica.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+																<span>Nomenclatura Comum Mercossul - NCM</span>
+															</a>
+														</li>
+														<li id="menuform:idSideMenu_5_0_7_6_1" role="menuitem">
+															<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadAreaEspecifica.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+																<span>Unidades de Medida</span>
+															</a>
+														</li>												
+														<li id="menuform:idSideMenu_5_0_7_6_2" role="menuitem">
+															<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadAreaEspecifica.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+																<span>CATMAT Comprasnet</span>
+															</a>
+														</li>
+													</ul>
+												</li>												
+											</ul>
+										</li>
+																				
+										<li id="menuform:idSideMenu_5_0_8" role="menuitem" class="">
+											<a href="#" class="ripplelink">
+												<span>Serviços</span>
+												<span class="ink animate"></span>
+												<i class="material-icons">&#xE313;</i>
+											</a>
+											<ul role="menu">
+												<li id="menuform:idSideMenu_5_0_8_1" role="menuitem" class="">
+													<a href="#" class="ripplelink">
+														<span>Importações</span>
+														<span class="ink animate"></span>
+														<i class="material-icons">&#xE313;</i>
+													</a>
+													<ul role="menu">
+														<li id="menuform:idSideMenu_5_0_8_1_0" role="menuitem">
+															<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadAreaEspecifica.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+																<span>Nomenclatura Brasileira de Serviço - NBS</span>
+															</a>
+														</li>
+													</ul>
+												</li>												
+											</ul>
+										</li>	
+									</ul> <!-- FINAL DO SUBMENU DE MATERIAIS -->
+								</li>
+							</ul>
+
+							<ul role="menu"><li id="menuform:idSideMenu_5_0" role="menuitem" class="">
+									<a href="#" class="ripplelink">
+										<span>Normas e Aquisições</span>
+										<span class="ink animate"></span>
+										<i class="material-icons">&#xE313;</i>
+									</a>
+									<ul role="menu">
+										<li id="menuform:idSideMenu_5_0_7" role="menuitem" class="">
+											<a href="#" class="ripplelink">
+												<span>Fornecedores</span>
+												<span class="ink animate"></span>
+												<i class="material-icons">&#xE313;</i>
+											</a>
+											<ul role="menu">
+												<li id="menuform:idSideMenu_5_0_7_0" role="menuitem">
+													<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadAreaEspecifica.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+														<span>Cadastros</span>
+													</a>
+												</li>							
+											</ul>
+										</li>
+																				
+										<li id="menuform:idSideMenu_5_0_8" role="menuitem" class="">
+											<a href="#" class="ripplelink">
+												<span>Compras - Cadastros Fundamentais</span>
+												<span class="ink animate"></span>
+												<i class="material-icons">&#xE313;</i>
+											</a>
+											<!--
+											<ul role="menu">
+												<li id="menuform:idSideMenu_5_0_8_1" role="menuitem" class="">
+													<a href="#" class="ripplelink">
+														<span>Cadastros Básicos</span>
+														<span class="ink animate"></span>
+														<i class="material-icons">&#xE313;</i>
+													</a>
+											-->
+													<ul role="menu">
+														<li id="menuform:idSideMenu_5_0_8_1_0" role="menuitem">
+															<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadAreaEspecifica.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+																<span>Modalidades de Licitação</span>
+															</a>
+														</li>
+														
+														<li id="menuform:idSideMenu_5_0_8_1_0" role="menuitem">
+															<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadAreaEspecifica.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+																<span>Tipos de Licitação</span>
+															</a>	
+														</li>
+														
+														<li id="menuform:idSideMenu_5_0_8_1_0" role="menuitem">
+															<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadAreaEspecifica.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+																<span>Tipos de Solicitações de Despesa</span>
+															</a>
+														</li>
+														
+														<li id="menuform:idSideMenu_5_0_8_1_0" role="menuitem">
+															<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadAreaEspecifica.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+																<span>Eventos da Aquisição</span>
+															</a>
+														</li>
+																												
+														<li id="menuform:idSideMenu_5_0_8_1_0" role="menuitem">
+															<a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/gad\/views\/tabberGadAreaEspecifica.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;5_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+																<span>Naturezas do Objeto</span>
+															</a>
+														</li>
+													</ul>
+												<!-- </li>												
+											</ul> -->
+										</li>	
+									</ul> <!-- FINAL DO SUBMENU DE SERVIÇOS -->
+								</ul>
+								<ul role="menu"><li id="menuform:idSideMenu_5_0" role="menuitem" class="">
+									<a href="#" class="ripplelink">
+										<span>Contratos & Convêncios</span>
+										<span class="ink animate"></span>
+										<i class="material-icons">&#xE313;</i>
+									</a>
+									<ul role="menu">
+										<li id="menuform:idSideMenu_5_0_7" role="menuitem" class="">
+											<a href="#" class="ripplelink">
+												<span>Cadastros Básicos</span>
+												<span class="ink animate"></span>
+												<i class="material-icons">&#xE313;</i>
+											</a>
+										</li>
+									</ul>
+								</ul>
+							
+							</li><li id="menuform:idSideMenu_6" role="menuitem" class=""><a href="#" class="ripplelink"><i class="material-icons"></i>
+						<span>Gestão de contratos externos</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><div class="layout-menu-tooltip"><div class="layout-menu-tooltip-arrow"></div><div class="layout-menu-tooltip-text">Gestão de contratos externos</div></div><ul role="menu"><li id="menuform:idSideMenu_6_0" role="menuitem" class=""><a href="#" class="ripplelink">
+						<span>01 Consultas e relatórios</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_6_0_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/acrIjrExtratoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_0_0&quot;}],f:&quot;menuform&quot;});return false;">
+						<span>02 Extrato do Instrumento Jurídico</span></a></li></ul></li><li id="menuform:idSideMenu_6_1" role="menuitem" class=""><a href="#" class="ripplelink"><span>Contratação</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_6_1_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/tabberAcrChecklistLicitacao.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_1_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Checklist do Processo Licitatório</span></a></li><li id="menuform:idSideMenu_6_1_1" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/acrIjrClausulaSuspensivaTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_1_1&quot;}],f:&quot;menuform&quot;});return false;"><span>Cláusulas Suspensivas</span></a></li><li id="menuform:idSideMenu_6_1_2" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/acrInstrumentoJurReceitaTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_1_2&quot;}],f:&quot;menuform&quot;});return false;"><span>Instrumento Jurídico de Receita</span></a></li><li id="menuform:idSideMenu_6_1_3" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/tabberAcrIjrQuadroInvestimento.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_1_3&quot;}],f:&quot;menuform&quot;});return false;"><span>Quadro de Investimentos</span></a></li><li id="menuform:idSideMenu_6_1_4" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/tabberAcrSubcredito.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_1_4&quot;}],f:&quot;menuform&quot;});return false;"><span>Subcrédito</span></a></li></ul></li><li id="menuform:idSideMenu_6_2" role="menuitem" class=""><a href="#" class="ripplelink"><span>Execução</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_6_2_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/tabberAcrIjrAlteracaoContratual.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_2_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Alterações Contratuais</span></a></li><li id="menuform:idSideMenu_6_2_1" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/tabberAcrCompContrapartidaFisica.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_2_1&quot;}],f:&quot;menuform&quot;});return false;"><span>Comprovação da Realização da Contrapartida Física</span></a></li></ul></li><li id="menuform:idSideMenu_6_3" role="menuitem" class=""><a href="#" class="ripplelink"><span>Negociação</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_6_3_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/tabberAcrPropostaProjeto.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_3_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Proposta de Projeto</span></a></li></ul></li><li id="menuform:idSideMenu_6_4" role="menuitem" class=""><a href="#" class="ripplelink"><span>Tabelas</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_6_4_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/tipoInstrumentoJuridicoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_4_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Área de Atuação</span></a></li><li id="menuform:idSideMenu_6_4_1" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/catGastoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_4_1&quot;}],f:&quot;menuform&quot;});return false;"><span>Categoria de Gasto</span></a></li><li id="menuform:idSideMenu_6_4_2" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/tabberAcrContato.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_4_2&quot;}],f:&quot;menuform&quot;});return false;"><span>Contatos</span></a></li><li id="menuform:idSideMenu_6_4_3" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/instituicaoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_4_3&quot;}],f:&quot;menuform&quot;});return false;"><span>Instituição</span></a></li><li id="menuform:idSideMenu_6_4_4" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/tabberInstituicaoInterveniente.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_4_4&quot;}],f:&quot;menuform&quot;});return false;"><span>Interveniente</span></a></li><li id="menuform:idSideMenu_6_4_5" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/tabberAcrComposicaoItemInvest.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_4_5&quot;}],f:&quot;menuform&quot;});return false;"><span>Item de Investimento</span></a></li><li id="menuform:idSideMenu_6_4_6" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/tabberAcrModalidade.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_4_6&quot;}],f:&quot;menuform&quot;});return false;"><span>Modalidade de Programa de Financiamento ou Repasse</span></a></li><li id="menuform:idSideMenu_6_4_7" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/tabberAcrModeloChecklist.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_4_7&quot;}],f:&quot;menuform&quot;});return false;"><span>Modelo de Checklist</span></a></li><li id="menuform:idSideMenu_6_4_8" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/objGrlProgFinRepTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_4_8&quot;}],f:&quot;menuform&quot;});return false;"><span>Objetivos Gerais de Programa de Financiamento ou Repasse</span></a></li><li id="menuform:idSideMenu_6_4_9" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/acr\/views\/tabberAcrProgFinanciamentoRepasse.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;6_4_9&quot;}],f:&quot;menuform&quot;});return false;"><span>Programa de Financiamento ou Repasse</span></a></li></ul></li></ul></li><li id="menuform:idSideMenu_7" role="menuitem" class=""><a href="#" class="ripplelink"><i class="material-icons"></i><span>Informação da despesa</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><div class="layout-menu-tooltip"><div class="layout-menu-tooltip-arrow"></div><div class="layout-menu-tooltip-text">Informação da despesa</div></div><ul role="menu"><li id="menuform:idSideMenu_7_0" role="menuitem" class=""><a href="#" class="ripplelink"><span>Consultas</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_7_0_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/inf\/views\/favorecidoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;7_0_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Consulta Favorecido</span></a></li></ul></li><li id="menuform:idSideMenu_7_1" role="menuitem" class=""><a href="#" class="ripplelink"><span>Tabelas</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_7_1_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/inf\/views\/tabberInfAtoNomeacaoOrdenador.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;7_1_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Atos Nomeação Ordenador</span></a></li><li id="menuform:idSideMenu_7_1_1" role="menuitem" class=""><a href="#" class="ripplelink"><span>Parametrizações</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_7_1_1_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/inf\/views\/tabberInfObrigaCodMatServMsg.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;7_1_1_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Obrigatoriedade material/serviço</span></a></li><li id="menuform:idSideMenu_7_1_1_1" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/inf\/views\/tabberInfObrigaRetencaoMsg.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;7_1_1_1&quot;}],f:&quot;menuform&quot;});return false;"><span>Retenção</span></a></li><li id="menuform:idSideMenu_7_1_1_2" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/inf\/views\/tabberInfTpFavNatDespesaMsg.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;7_1_1_2&quot;}],f:&quot;menuform&quot;});return false;"><span>Tipo favorecido</span></a></li><li id="menuform:idSideMenu_7_1_1_3" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/inf\/views\/tabberInfTpSolNatDespesaMsgViewBean.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;7_1_1_3&quot;}],f:&quot;menuform&quot;});return false;"><span>Tipo solicitação</span></a></li></ul></li></ul></li></ul></li><li id="menuform:idSideMenu_8" role="menuitem" class=""><a href="#" class="ripplelink"><i class="material-icons"></i><span>Orçamento</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><div class="layout-menu-tooltip"><div class="layout-menu-tooltip-arrow"></div><div class="layout-menu-tooltip-text">Orçamento</div></div><ul role="menu"><li id="menuform:idSideMenu_8_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/dispositivoLegalTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Dispositivo Legal</span></a></li><li id="menuform:idSideMenu_8_1" role="menuitem" class=""><a href="#" class="ripplelink"><span>Lei de diretrizes orçamentárias</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_8_1_0" role="menuitem" class=""><a href="#" class="ripplelink"><span>Anexos de metas fiscais</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_8_1_0_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcLdoRenunciaReceita.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_1_0_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Demonstrativo VII - Renúncia de Receitas</span></a></li></ul></li><li id="menuform:idSideMenu_8_1_1" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcLdoCreditoContratado.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_1_1&quot;}],f:&quot;menuform&quot;});return false;"><span>Dívida Pública</span></a></li><li id="menuform:idSideMenu_8_1_2" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/ldoCadastroTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_1_2&quot;}],f:&quot;menuform&quot;});return false;"><span>Estruturação LDO</span></a></li></ul></li><li id="menuform:idSideMenu_8_2" role="menuitem" class=""><a href="#" class="ripplelink"><span>Lei orçamentária</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_8_2_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcLoaProgramaTrabalho.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_2_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Despesa orçamentária</span></a></li><li id="menuform:idSideMenu_8_2_1" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/loaCadastroTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_2_1&quot;}],f:&quot;menuform&quot;});return false;"><span>Estruturação LOA</span></a></li><li id="menuform:idSideMenu_8_2_2" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcLoaReceitaLegislacao.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_2_2&quot;}],f:&quot;menuform&quot;});return false;"><span>Legislação da receita</span></a></li><li id="menuform:idSideMenu_8_2_3" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcLoaPtFonNat.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_2_3&quot;}],f:&quot;menuform&quot;});return false;"><span>PT – FON – NAT</span></a></li></ul></li><li id="menuform:idSideMenu_8_3" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/pllCadastroTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_3&quot;}],f:&quot;menuform&quot;});return false;"><span>Parâmetrização de workflow</span></a></li><li id="menuform:idSideMenu_8_4" role="menuitem" class=""><a href="#" class="ripplelink"><span>Plano plurianual</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_8_4_0" role="menuitem" class=""><a href="#" class="ripplelink"><span>Fase qualitativa</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_8_4_0_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcPpaAcao.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_4_0_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Ação</span></a></li><li id="menuform:idSideMenu_8_4_0_1" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberDimensao.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_4_0_1&quot;}],f:&quot;menuform&quot;});return false;"><span>Dimensão do Planejamento</span></a></li><li id="menuform:idSideMenu_8_4_0_2" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/ppaCadastroTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_4_0_2&quot;}],f:&quot;menuform&quot;});return false;"><span>Estruturação PPA</span></a></li><li id="menuform:idSideMenu_8_4_0_3" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcPpaProgramaIndicador.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_4_0_3&quot;}],f:&quot;menuform&quot;});return false;"><span>Indicador</span></a></li><li id="menuform:idSideMenu_8_4_0_4" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcIniciativaEstrategica.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_4_0_4&quot;}],f:&quot;menuform&quot;});return false;"><span>Iniciativas Estratégicas</span></a></li><li id="menuform:idSideMenu_8_4_0_5" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/objetivosCentraisTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_4_0_5&quot;}],f:&quot;menuform&quot;});return false;"><span>Objetivos Centrais do Governo</span></a></li><li id="menuform:idSideMenu_8_4_0_6" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcPpaAcaoProduto.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_4_0_6&quot;}],f:&quot;menuform&quot;});return false;"><span>Produto</span></a></li><li id="menuform:idSideMenu_8_4_0_7" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcPpaPrograma.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_4_0_7&quot;}],f:&quot;menuform&quot;});return false;"><span>Programa</span></a></li><li id="menuform:idSideMenu_8_4_0_8" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberPPAVinculacao.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_4_0_8&quot;}],f:&quot;menuform&quot;});return false;"><span>Vinculação do Plano Plurianual</span></a></li></ul></li><li id="menuform:idSideMenu_8_4_1" role="menuitem" class=""><a href="#" class="ripplelink"><span>Fase quantitativa</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_8_4_1_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcPpaUnidgesPerTeto.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_4_1_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Limites Orçamentários</span></a></li><li id="menuform:idSideMenu_8_4_1_1" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/orcPpaPtMetaFinanceiraTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_4_1_1&quot;}],f:&quot;menuform&quot;});return false;"><span>Metas Físicas e Financeiras dos Programas de Trabalho e Produto</span></a></li></ul></li></ul></li><li id="menuform:idSideMenu_8_5" role="menuitem" class=""><a href="#" class="ripplelink"><span>Ppa - fase qualitativa</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_8_5_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/areaPlanejamentoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Área de Planejamento</span></a></li><li id="menuform:idSideMenu_8_5_1" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/areaResultadoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_1&quot;}],f:&quot;menuform&quot;});return false;"><span>Área de Resultado</span></a></li><li id="menuform:idSideMenu_8_5_2" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/fonteRecursoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_2&quot;}],f:&quot;menuform&quot;});return false;"><span>Fonte de Recurso</span></a></li><li id="menuform:idSideMenu_8_5_3" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/funcaoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_3&quot;}],f:&quot;menuform&quot;});return false;"><span>Função</span></a></li><li id="menuform:idSideMenu_8_5_4" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/grupoNaturezaDespesaTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_4&quot;}],f:&quot;menuform&quot;});return false;"><span>Grupo Natureza da Despesa</span></a></li><li id="menuform:idSideMenu_8_5_5" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/impNatDespesaTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_5&quot;}],f:&quot;menuform&quot;});return false;"><span>Importar Natureza da Despesa</span></a></li><li id="menuform:idSideMenu_8_5_6" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/impNatReceitaLegalTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_6&quot;}],f:&quot;menuform&quot;});return false;"><span>Importar Natureza da Receita</span></a></li><li id="menuform:idSideMenu_8_5_7" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/unidadeDeMedidaTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_7&quot;}],f:&quot;menuform&quot;});return false;"><span>Métrica</span></a></li><li id="menuform:idSideMenu_8_5_8" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/natDespesaTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_8&quot;}],f:&quot;menuform&quot;});return false;"><span>Natureza da Despesa</span></a></li><li id="menuform:idSideMenu_8_5_9" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/naturezaReceitaTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_9&quot;}],f:&quot;menuform&quot;});return false;"><span>Natureza de Receita</span></a></li><li id="menuform:idSideMenu_8_5_10" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/origemDadoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_10&quot;}],f:&quot;menuform&quot;});return false;"><span>Origem dos Dados</span></a></li><li id="menuform:idSideMenu_8_5_11" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/parametrosExercicioTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_11&quot;}],f:&quot;menuform&quot;});return false;"><span>Parâmetros do Exercício</span></a></li><li id="menuform:idSideMenu_8_5_12" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/principioAtuacaoGovernoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_12&quot;}],f:&quot;menuform&quot;});return false;"><span>Princípios Atuação do Governo</span></a></li><li id="menuform:idSideMenu_8_5_13" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/publicoAlvoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_13&quot;}],f:&quot;menuform&quot;});return false;"><span>Público Alvo</span></a></li><li id="menuform:idSideMenu_8_5_14" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/subFuncaoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_5_14&quot;}],f:&quot;menuform&quot;});return false;"><span>SubFunção</span></a></li></ul></li><li id="menuform:idSideMenu_8_6" role="menuitem" class=""><a href="#" class="ripplelink"><span>Projeção de receita</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_8_6_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcDesdobreEvolucaoReceita.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_6_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Desdobramento evolução da receita</span></a></li><li id="menuform:idSideMenu_8_6_1" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcDetalheEvolucaoReceita.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_6_1&quot;}],f:&quot;menuform&quot;});return false;"><span>Detalhamento do desdobramento evolução</span></a></li><li id="menuform:idSideMenu_8_6_2" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcEvolucaoReceita.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_6_2&quot;}],f:&quot;menuform&quot;});return false;"><span>Evolução da receita</span></a></li><li id="menuform:idSideMenu_8_6_3" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcFiltroReceita.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_6_3&quot;}],f:&quot;menuform&quot;});return false;"><span>Filtro de receita</span></a></li><li id="menuform:idSideMenu_8_6_4" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcProjetista.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_6_4&quot;}],f:&quot;menuform&quot;});return false;"><span>Projetista</span></a></li></ul></li><li id="menuform:idSideMenu_8_7" role="menuitem" class=""><a href="#" class="ripplelink"><span>Tabelas</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_8_7_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcCronograma.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_7_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Cronograma</span></a></li><li id="menuform:idSideMenu_8_7_1" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/diretrizTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_7_1&quot;}],f:&quot;menuform&quot;});return false;"><span>Diretrizes Estratégicas</span></a></li><li id="menuform:idSideMenu_8_7_2" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/importaFonteRecursoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_7_2&quot;}],f:&quot;menuform&quot;});return false;"><span>Importar Fontes de Recurso</span></a></li><li id="menuform:idSideMenu_8_7_3" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/orcMetaTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_7_3&quot;}],f:&quot;menuform&quot;});return false;"><span>Metas Estratégicas</span></a></li><li id="menuform:idSideMenu_8_7_4" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/tabberOrcParamFluxoView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_7_4&quot;}],f:&quot;menuform&quot;});return false;"><span>Parametrização de Fluxo</span></a></li></ul></li><li id="menuform:idSideMenu_8_8" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/orcamento\/views\/pllTipoOperTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;8_8&quot;}],f:&quot;menuform&quot;});return false;"><span>Tipo de Operação</span></a></li></ul></li><li id="menuform:idSideMenu_9" role="menuitem" class=""><a href="#" class="ripplelink"><i class="material-icons"></i><span>Pessoa</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><div class="layout-menu-tooltip"><div class="layout-menu-tooltip-arrow"></div><div class="layout-menu-tooltip-text">Pessoa</div></div><ul role="menu"><li id="menuform:idSideMenu_9_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/pessoa\/views\/cboTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;9_0&quot;}],f:&quot;menuform&quot;});return false;"><span>CBO</span></a></li><li id="menuform:idSideMenu_9_1" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/pessoa\/views\/cnaeSecaoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;9_1&quot;}],f:&quot;menuform&quot;});return false;"><span>CNAE</span></a></li><li id="menuform:idSideMenu_9_2" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/pessoa\/views\/pessoaTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;9_2&quot;}],f:&quot;menuform&quot;});return false;"><span>Cadastro de Pessoa</span></a></li><li id="menuform:idSideMenu_9_3" role="menuitem" class=""><a href="#" class="ripplelink"><span>Conta corrente</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><ul role="menu"><li id="menuform:idSideMenu_9_3_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/financeiro\/views\/tabberFinConta.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;9_3_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Beneficiário</span></a></li></ul></li><li id="menuform:idSideMenu_9_4" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/pessoa\/views\/fornecedorTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;9_4&quot;}],f:&quot;menuform&quot;});return false;"><span>Fornecedor</span></a></li><li id="menuform:idSideMenu_9_5" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/pessoa\/views\/localizacaoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;9_5&quot;}],f:&quot;menuform&quot;});return false;"><span>Localização</span></a></li><li id="menuform:idSideMenu_9_10" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/pessoa\/views\/naturezaJuridicaTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;9_10&quot;}],f:&quot;menuform&quot;});return false;"><span>Natureza Jurídica</span></a></li><li id="menuform:idSideMenu_9_11" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/pessoa\/views\/tipoLogradouroTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;9_11&quot;}],f:&quot;menuform&quot;});return false;"><span>Tipo Logradouro</span></a></li></ul></li><li id="menuform:idSideMenu_10" role="menuitem" class=""><a href="#" class="ripplelink"><i class="material-icons"></i><span>Recursos humanos</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><div class="layout-menu-tooltip"><div class="layout-menu-tooltip-arrow"></div><div class="layout-menu-tooltip-text">Recursos humanos</div></div><ul role="menu"><li id="menuform:idSideMenu_10_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/recursos\-humanos\/views\/cargoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;10_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Cadastro de Cargo</span></a></li><li id="menuform:idSideMenu_10_1" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/recursos\-humanos\/views\/matriculaTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;10_1&quot;}],f:&quot;menuform&quot;});return false;"><span>Matrícula</span></a></li></ul></li><li id="menuform:idSideMenu_11" role="menuitem" class=""><a href="#" class="ripplelink"><i class="material-icons"></i><span>Workflow</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a><div class="layout-menu-tooltip"><div class="layout-menu-tooltip-arrow"></div><div class="layout-menu-tooltip-text">Workflow</div></div><ul role="menu"><li id="menuform:idSideMenu_11_0" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/workflow\/views\/caixaEntradaTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;11_0&quot;}],f:&quot;menuform&quot;});return false;"><span>Caixa de Entrada</span></a></li><li id="menuform:idSideMenu_11_1" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/workflow\/views\/processoTabView.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;11_1&quot;}],f:&quot;menuform&quot;});return false;"><span>Processos</span></a></li><li id="menuform:idSideMenu_11_2" role="menuitem"><a href="#" onclick="PrimeFaces.ab({s:&quot;menuform:idSideMenu&quot;,p:&quot;menuform:idSideMenu&quot;,u:&quot;content&quot;,g:false,ps:true,pa:[{name:&quot;targetUrl&quot;,value:&quot;\/secured\/workflow\/views\/tabberWfSituacaoPasso.xhtml&quot;},{name:&quot;menuform:idSideMenu_menuid&quot;,value:&quot;11_2&quot;}],f:&quot;menuform&quot;});return false;"><span>Situação da atividade</span></a></li></ul></li></ul><script id="menuform:idSideMenu_s" type="text/javascript">$(function(){PrimeFaces.cw("Ultima","me",{id:"menuform:idSideMenu",stateful:true});});</script>
+
+				</div>
+			</div>
+		</div>
+</form>
+
+		<div class="layout-main"><div id="content" class="ui-panel ui-widget ui-widget-content ui-corner-all" data-widget="widget_content"><div id="content_content" class="ui-panel-content ui-widget-content">
+					<!-- TODO - Qual &eacute; o escopo desta p&aacute;gina!? N&atilde;o pode ser sess&atilde;o! --></div></div><script id="content_s" type="text/javascript">$(function(){PrimeFaces.cw("Panel","widget_content",{id:"content"});});</script><div id="j_idt79"></div><script id="j_idt79_s" type="text/javascript">$(function(){PrimeFaces.cw("AjaxStatus","widget_j_idt79",{id:"j_idt79",delay:0,start:function(){PF('statusCarregar').show()},error:function(){PF('statusCarregar').hide()},success:function(){PF('statusCarregar').hide()}});});</script><div id="j_idt80" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-content ui-widget-content" id="j_idt80_content"><img id="j_idt81" src="https://gicofhom.rio.gov.br/portal-ui-web/resources/img/progress_indicator.gif?pfdrid_c=true" alt="" style="padding-left: 20px;" /></div></div><script id="j_idt80_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","statusCarregar",{id:"j_idt80",draggable:false,resizable:false,modal:true,width:"100px",height:"40px"});});</script>
+
+	<div class="footer">
+
+
+
+		<div class="card clearfix">
+
+			<span class="footer-text-left">Diuno - Software e Serviços em TI</span> <span class="footer-text-right"><span></span> <span>Gicof
+					- v2.2.1</span></span>
+		</div>
+
+	</div>
+
+			<iframe id="frame" onload="verifyChat();" style="border: 0; float: right; position: fixed; bottom: 0; right: 0" src="https://gicofhom.rio.gov.br/chat?empid=1&amp;usrid=1"></iframe>
+
+		</div>
+	</div><div id="j_idt84" style="width:32px;height:32px;position:fixed;right:7px;bottom:7px"><div id="j_idt84_start" style="display:none">
+			<i class="fa fa-circle-o-notch fa-spin ajax-loader" aria-hidden="true"></i></div><div id="j_idt84_complete" style="display:none"></div></div><script id="j_idt84_s" type="text/javascript">$(function(){PrimeFaces.cw("AjaxStatus","widget_j_idt84",{id:"j_idt84",delay:0});});</script></body>
+
+</html>
